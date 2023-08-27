@@ -21,17 +21,31 @@ class No347_TopKFrequentElementsTest {
   }
 
   @Test
+  public void topKFrequentTest0() {
+    int[] actual = no347.topKFrequent(new int[]{1,1,1,2,2,3,3}, 2);
+    assertEquals(1, actual[0]);
+    assertEquals(2, actual[1]);
+  }
+
+  @Test
   public void topKFrequentTest1() {
-    assertEquals(new int[]{1}, no347.topKFrequent(new int[]{1}, 1));
+    int[] actual = no347.topKFrequent(new int[]{1}, 1);
+    assertEquals(1, actual[0]);
   }
 
   @Test
   public void topKFrequentTest2() {
-    assertEquals(new int[]{4, 1}, no347.topKFrequent(new int[]{3, 1, 4, 4, 5, 2, 6, 1}, 2));
+    int[] actual = no347.topKFrequent(new int[]{3, 1, 4, 4, 5, 2, 6, 1}, 2);
+    assertEquals(1, actual[0]);
+    assertEquals(4, actual[1]);
   }
 
   @Test
   public void topKFrequentTes3() {
-    assertEquals(new int[]{5, 11, 7, 10}, no347.topKFrequent(new int[]{7, 10, 11, 5, 2, 5, 5, 7, 11, 8, 9}, 4));
+    int[] actual = no347.topKFrequent(new int[]{7, 10, 11, 5, 2, 5, 5, 7, 11, 8, 9}, 4);
+    assertEquals(5, actual[0]);
+    assertEquals(7, actual[1]);
+    assertEquals(11, actual[2]);
+    assertEquals(2, actual[3]);
   }
 }

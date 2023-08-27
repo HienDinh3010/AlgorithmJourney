@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 public class No347_TopKFrequentElements {
 
@@ -24,26 +26,36 @@ public class No347_TopKFrequentElements {
   public int[] topKFrequent(int[] nums, int k) {
     int len = nums.length;
     if (len < k) return null;
-    //     <num, occur>
+    if (len == 1 && k == 1) return new int[]{nums[0]};
     HashMap<Integer, Integer> countMap = new HashMap<>();
-    List<Integer> list = new ArrayList<>();
+    HashMap<Integer, List<Integer>> bucketMap = new HashMap<>();
+    //TreeMap<Integer, List<Integer>> bucketMap = new TreeMap<>();
     for (Integer n: nums) {
-      countMap.put(n, countMap.getOrDefault(n, 1) + 1);
+      countMap.put(n, countMap.getOrDefault(n, 0) + 1);
     }
 
     for (Entry<Integer, Integer> entry: countMap.entrySet()) {
-      int key = entry.getKey();
-      int value = entry.getValue();
-      list.add(value, key);
+      int num = entry.getKey();
+      int occur = entry.getValue();
+      List<Integer> existedList = bucketMap.getOrDefault(occur, new ArrayList<>());
+      existedList.add(num);
+      bucketMap.put(occur, existedList);
     }
+
     int[] res = new int[k];
-    int index = list.size() - k;
-    for (int i = 0; i < k; i++) {
-      res[i] = list.get(index);
-      index++;
+    int index = 0;
+    List<List<Integer>> bucketValues = bucketMap.values().stream().toList();
+    for (int i = bucketMap.size() - 1; i >= 0; i--) {
+      List<Integer> list = bucketValues.get(i);
+      for (Integer num: list) {
+        res[index] = num;
+        index++;
+        if (index == k) return res;
+      }
     }
     return res;
   }
+
   public int[] topKFrequent2(int[] nums, int k) {
     int len = nums.length;
     if (len  < k) return null;
