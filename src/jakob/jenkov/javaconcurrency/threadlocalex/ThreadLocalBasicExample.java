@@ -1,5 +1,7 @@
 package jakob.jenkov.javaconcurrency.threadlocalex;
 
+import java.util.Arrays;
+
 public class ThreadLocalBasicExample {
     public static void main(String[] args) {
         ThreadLocal<String> threadLocal = new ThreadLocal<>();
@@ -30,5 +32,25 @@ public class ThreadLocalBasicExample {
 
         thread1.start();
         thread2.start();
+    }
+
+    public int solution(int[] A) {
+        // Implement your solution here
+        int len = A.length;
+        if (len == 0) return 1;
+        Arrays.sort(A);
+        int index = Arrays.binarySearch(A, 1);
+        if (index != -1) return 1;
+        int expected = 2;
+        while (index < len) {
+            index++;
+            int elementAtIndex = A[index];
+            if (elementAtIndex == expected) {
+                expected++;
+            } else {
+                return expected;
+            }
+        }
+        return 1;
     }
 }

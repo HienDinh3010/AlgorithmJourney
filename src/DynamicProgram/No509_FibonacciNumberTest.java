@@ -14,6 +14,12 @@ public class No509_FibonacciNumberTest {
     }
 
     @Test
+    public void test() {
+        int actual = no509.solution(new int[]{1, 3, 6, 4, 1, 2});
+        assertEquals(5, actual);
+    }
+
+    @Test
     public void test00() {
         int actual = no509.fib(0);
         assertEquals(0, actual);
