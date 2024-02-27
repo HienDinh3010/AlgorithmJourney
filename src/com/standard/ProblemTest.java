@@ -1,6 +1,6 @@
 package com.standard;
 
-import com.assessment.versa.networks.FairIndexes;
+import com.assessment.com3.FairIndexes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

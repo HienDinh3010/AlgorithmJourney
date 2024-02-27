@@ -1,4 +1,4 @@
-package com.assessment.versa.networks;
+package com.assessment.com3;
 
 public class FairIndexes {
 

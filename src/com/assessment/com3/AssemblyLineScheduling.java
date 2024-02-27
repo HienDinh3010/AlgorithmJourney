@@ -1,4 +1,4 @@
-package com.assessment.versa.networks;
+package com.assessment.com3;
 
 /**
  * In a car factory there are two assembly lines, called A and B.

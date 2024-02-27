@@ -1,6 +1,4 @@
-package com.assessment.pureintegration;
-
-import java.util.Arrays;
+package com.assessment.com2;
 
 public class MinimumSetSizeForCoveringIntervalsTwo {
 

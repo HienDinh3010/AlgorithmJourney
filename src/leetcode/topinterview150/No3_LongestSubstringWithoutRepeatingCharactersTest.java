@@ -1,6 +1,5 @@
 package leetcode.topinterview150;
 
-import com.assessment.versa.networks.FairIndexes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

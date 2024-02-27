@@ -1,4 +1,4 @@
-package com.assessment.pureintegration;
+package com.assessment.com2;
 
 import java.util.ArrayList;
 import java.util.Collections;
