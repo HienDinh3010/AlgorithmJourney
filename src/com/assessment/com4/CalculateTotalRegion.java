@@ -4,21 +4,27 @@ import java.util.List;
 
 public class CalculateTotalRegion {
     public int solution(List<Integer> heights) {
-        int sum = 0;
+        int totalRegionSum = 0;
+
         for (int i = 0; i < heights.size(); i++) {
             int left = i;
-            while (left > 0 && heights.get(left - 1) >= heights.get(i)) {
+            int right = i;
+            int height = heights.get(i);
+
+            // Expand to the left
+            while (left - 1 >= 0 && heights.get(left - 1) <= height) {
                 left--;
             }
 
-            int right = i;
-            while (right < heights.size() - 1 && heights.get(right + 1) >= heights.get(i)) {
+            // Expand to the right
+            while (right + 1 < heights.size() && heights.get(right + 1) <= height) {
                 right++;
             }
 
-            int regionLength = (right - left + 1);
-            sum += regionLength;
+            // Calculate the region size and add to the sum
+            totalRegionSum += (right - left + 1);
         }
-        return sum;
+
+        return totalRegionSum;
     }
 }

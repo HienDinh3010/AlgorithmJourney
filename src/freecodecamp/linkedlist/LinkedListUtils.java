@@ -52,16 +52,61 @@ public class LinkedListUtils<T> {
     }
 
     static <T> int linkedListSumRecursive(Node<T> head) {
-/*        if (head == null) return 0;
-        return (Integer) head.val + linkedListSumRecursive(head.next);*/
-        Integer sum = 0;
-        sumValues(head, sum);
-        return sum;
+        if (head == null) return 0;
+        return (Integer) head.val + linkedListSumRecursive(head.next);
     }
 
-    private static <T> void sumValues(Node<T> node, Integer sum) {
-        if (node == null) return;
-        sum = sum + (Integer) node.val;
-        sumValues(node.next, sum);
+
+    public static <T> boolean isContains(Node<T> head, T val) {
+        Node<T> currentNode = head;
+        while (currentNode != null) {
+            if (currentNode.val == val) {
+                return true;
+            }
+            currentNode = currentNode.next;
+        }
+        return false;
+    }
+
+    public static <T> boolean isContainsRecursive(Node<T> head, T val) {
+        if (head == null) return false;
+        if (head.val == val) return true;
+        return isContainsRecursive(head.next, val);
+    }
+
+    public static <T> T getNodeVal(Node<T> head, int index) {
+        int count = 0;
+        Node<T> current = head;
+        while (current != null) {
+            if (count == index) return current.val;
+            count++;
+            current = current.next;
+        }
+        return null;
+    }
+
+    public static <T> T getNodeValRecursive(Node<T> head, int index) {
+        if (head == null) return null;
+        if (index == 0) return head.val;
+        return getNodeValRecursive(head.next, index - 1);
+    }
+
+    public static <T> Node<T> revertTheOrder(Node<T> head) {
+        Node<T> prev = null;
+        Node<T> current = head;
+        while (current != null) {
+            Node<T> next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
+    public static <T> Node<T> revertTheOrderRecursive(Node<T> head, Node<T> prev) {
+        if (head == null) return prev;
+        Node<T> next = head.next;
+        head.next = prev;
+        return revertTheOrderRecursive(next, head);
     }
 }

@@ -42,5 +42,22 @@ public class Node<T> {
         num3.next = num4;
         System.out.println(LinkedListUtils.linkedListSum(num));
         System.out.println(LinkedListUtils.linkedListSumRecursive(num));
+        System.out.println("Checking isContains");
+        System.out.println(LinkedListUtils.isContains(a, "A"));
+        System.out.println(LinkedListUtils.isContains(a, "E"));
+        System.out.println(LinkedListUtils.isContainsRecursive(a, "A"));
+        System.out.println(LinkedListUtils.isContainsRecursive(a, "E"));
+        System.out.println("getNodeVal");
+        System.out.println(LinkedListUtils.getNodeVal(a, 2));//C
+        System.out.println(LinkedListUtils.getNodeValRecursive(a,2 ));//C
+        System.out.println("revertTheOrder");
+        System.out.println("before revert: ");
+        LinkedListUtils.printLinkedList(a);
+        System.out.println(LinkedListUtils.revertTheOrder(a));
+        System.out.println("after revert: ");
+        LinkedListUtils.printLinkedListRecursive(d);
+        System.out.println("Re-revert");
+        LinkedListUtils.revertTheOrderRecursive(d, null);
+        LinkedListUtils.printLinkedListRecursive(a);
     }
 }

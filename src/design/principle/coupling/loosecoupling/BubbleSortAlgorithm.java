@@ -5,4 +5,7 @@ public class BubbleSortAlgorithm implements SortAlgorithm {
     public void sort() {
 
     }
+
+    public BubbleSortAlgorithm() {
+    }
 }
