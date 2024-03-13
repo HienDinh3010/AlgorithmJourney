@@ -1,4 +1,4 @@
-package com.assessment.com1;
+package company.assessment.com1;
 
 import java.util.HashMap;
 import java.util.Map;

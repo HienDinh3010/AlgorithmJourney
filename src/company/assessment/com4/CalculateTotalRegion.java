@@ -1,4 +1,4 @@
-package com.assessment.com4;
+package company.assessment.com4;
 
 import java.util.List;
 

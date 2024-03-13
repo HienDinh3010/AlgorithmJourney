@@ -1,4 +1,4 @@
-package com.assessment.com3;
+package company.assessment.com3;
 
 public class FairIndexes {
 

@@ -1,22 +1,23 @@
-package com.assessment.com2;
+package company.assessment.com2;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MinimumSetSizeForCoveringIntervalsTwoTest {
-    MinimumSetSizeForCoveringIntervalsTwo problem;
+public class SmallestSetCoveringIntervalTest {
+    SmallestSetCoveringInterval problem;
 
     @BeforeEach
     public void initialize() {
-        problem = new MinimumSetSizeForCoveringIntervalsTwo();
+        problem = new SmallestSetCoveringInterval();
     }
 
     @Test
     public void test() {
-        int[][] intervals = {{1, 3}, {2, 5}, {1, 4}};
-        assertEquals(2, problem.solution(intervals));
+        int[][] intervals = {{1,3}, {2,5}, {1, 4}};
+        int actual = problem.solution(intervals);
+        assertEquals(2, actual);
     }
 
     @Test
@@ -33,6 +34,7 @@ public class MinimumSetSizeForCoveringIntervalsTwoTest {
 
     @Test
     public void test3() {
+        //[0, 3], [2, 6], [3, 4], [6, 9]
         int[][] intervals = {{0, 3}, {2, 6}, {3, 4}, {6, 9}};
         assertEquals(5, problem.solution(intervals));
     }

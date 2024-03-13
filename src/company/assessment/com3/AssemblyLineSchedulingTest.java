@@ -1,17 +1,16 @@
-package com.standard;
+package company.assessment.com3;
 
-import com.assessment.com3.FairIndexes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ProblemTest {
-    FairIndexes problem;
+public class AssemblyLineSchedulingTest {
+    AssemblyLineScheduling problem;
 
     @BeforeEach
     public void initialize() {
-        problem = new FairIndexes();
+        problem = new AssemblyLineScheduling();
     }
 
     @Test

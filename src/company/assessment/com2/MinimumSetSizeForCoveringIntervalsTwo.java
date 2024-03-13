@@ -1,4 +1,4 @@
-package com.assessment.com2;
+package company.assessment.com2;
 
 public class MinimumSetSizeForCoveringIntervalsTwo {
 

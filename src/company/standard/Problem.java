@@ -1,4 +1,4 @@
-package com.standard;
+package company.standard;
 
 public class Problem {
 }
